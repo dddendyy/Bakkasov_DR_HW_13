@@ -1,6 +1,7 @@
 import pytest
 
-from scripts.main import Product, Category
+from scripts.product import Product
+from scripts.category import Category
 
 @pytest.fixture()
 def product_sprite():
@@ -24,4 +25,4 @@ def test_category_init(category_drink):
     assert category_drink.desc == 'just drink it'
     assert category_drink.goods == ['Sprite', 'Pepi']
     assert category_drink.goods_count == 2
-    assert category_drink.categories_count == 3 # в main уже инициализированны 2 экземпляра
+    assert category_drink.categories_count == 1
