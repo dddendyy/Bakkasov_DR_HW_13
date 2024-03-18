@@ -4,7 +4,7 @@ class Product:
     price: float
     available: int
 
-    def __init__(self, name, desc, price, available):
+    def __init__(self, name: str, desc: str, price: float, available: int):
         self.name = name
         self.desc = desc
         self.price = price

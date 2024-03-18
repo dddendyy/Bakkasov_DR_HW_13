@@ -5,7 +5,7 @@ class Category:
     goods_count = 0
     categories_count = 0
 
-    def __init__(self, name, desc, goods):
+    def __init__(self, name: str, desc: str, goods: list):
         self.name = name
         self.desc = desc
         self.goods = goods
