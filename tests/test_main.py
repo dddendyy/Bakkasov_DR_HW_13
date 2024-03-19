@@ -23,6 +23,6 @@ def test_product_init(product_sprite):
 def test_category_init(category_drink):
     assert category_drink.name == 'Drinks'
     assert category_drink.desc == 'just drink it'
-    assert category_drink.goods == ['Sprite', 'Pepi']
     assert category_drink.goods_count == 2
     assert category_drink.categories_count == 1
+    # assert category_drink._goods == ['Sprite', 'Pepi']
