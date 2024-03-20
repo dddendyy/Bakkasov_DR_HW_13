@@ -22,6 +22,6 @@ class Category:
         '''декоратор для форматного вывода товаров'''
         output = ''
         for good in self.__goods:
-            output += f"{good.name}, {good.price} руб. Остаток: {good.available}\n"
+            output += f"{good.name}, {float(good.price)} руб. Остаток: {good.available}\n"
 
         return output

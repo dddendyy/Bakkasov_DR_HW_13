@@ -8,7 +8,7 @@ if __name__ == '__main__':
     pepi = Product('Pepi', 'carbonated soft drink produced by PepsiCo', 99, 49)
 
     mountain_dew = Product('Mountain Dew',
-                           'a refreshing green drink that has a rich, pronounced citrus taste and a pleasant aroma',
+                           'green drink',
                            129, 10)
 
     sausage = Product('Sausage',

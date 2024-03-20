@@ -10,7 +10,8 @@ def product_sprite():
 
 @pytest.fixture()
 def category_drink():
-    return Category('Drinks', 'just drink it', ['Sprite', 'Pepi'])
+    return Category('Drinks', 'just drink it', [Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25),
+                                                Product('Pepi', 'carbonated soft drink produced by PepsiCo', 99, 49)])
 
 
 def test_product_init(product_sprite):
@@ -25,6 +26,7 @@ def test_category_init(category_drink):
     assert category_drink.desc == 'just drink it'
     assert category_drink.goods_count == 2
     assert category_drink.categories_count == 1
-    assert category_drink.goods == 'Sprite, Цена = 75 руб. Остаток: 25\nPepi, Цена = 99 руб. Остаток: 49\nMountain Dew, Цена = 129 руб. Остаток: 10'
+    assert category_drink.goods == 'Sprite, 75.0 руб. Остаток: 25\nPepi, 99.0 руб. Остаток: 49\n'
+
 
 
