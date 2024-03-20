@@ -25,4 +25,6 @@ def test_category_init(category_drink):
     assert category_drink.desc == 'just drink it'
     assert category_drink.goods_count == 2
     assert category_drink.categories_count == 1
-    # assert category_drink._goods == ['Sprite', 'Pepi']
+    assert category_drink.goods == 'Sprite, Цена = 75 руб. Остаток: 25\nPepi, Цена = 99 руб. Остаток: 49\nMountain Dew, Цена = 129 руб. Остаток: 10'
+
+

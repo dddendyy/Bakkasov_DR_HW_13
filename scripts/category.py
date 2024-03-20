@@ -18,8 +18,10 @@ class Category:
         self.__goods.append(value)
 
     @property
-    def goods(self, output=''):
+    def goods(self):
+        '''декоратор для форматного вывода товаров'''
+        output = ''
         for good in self.__goods:
-            output += f"{good['name']}, {good['price']} руб. Остаток: {good['available']}\n"
+            output += f"{good.name}, {good.price} руб. Остаток: {good.available}\n"
 
         return output
