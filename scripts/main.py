@@ -12,7 +12,7 @@ if __name__ == '__main__':
                            129, 10)
 
     sausage = Product('Sausage',
-                      'a food product; a class-forming type of sausage products, which is minced meat in an oblong shell',
+                      'a food product',
                       259, 70)
 
     shrimps = Product.create_product('Shrimps', 'So tasty', 369, 29)
@@ -24,3 +24,6 @@ if __name__ == '__main__':
 
     print(sausage)
     print(drinks)
+    print(sprite + sausage)
+
+

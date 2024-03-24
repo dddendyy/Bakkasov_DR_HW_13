@@ -7,6 +7,9 @@ from scripts.category import Category
 def product_sprite():
     return Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25)
 
+@pytest.fixture()
+def product_sausage():
+    return Product('Sausage', 'a food product', 259, 70)
 
 @pytest.fixture()
 def category_drink():
@@ -29,4 +32,5 @@ def test_category_init(category_drink):
     assert category_drink.goods == 'Sprite, 75.0 руб. Остаток: 25\nPepi, 99.0 руб. Остаток: 49\n'
 
 
-
+def test_product_add(product_sprite, product_sausage):
+    assert product_sprite + product_sausage == 20_005

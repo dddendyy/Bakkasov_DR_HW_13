@@ -10,6 +10,9 @@ class Product:
         self.__price = price
         self.available = available
 
+    def __add__(self, other):
+        return self.__price * self.available + other.__price * other.available
+
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.available}."
 
