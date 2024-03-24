@@ -32,5 +32,13 @@ def test_category_init(category_drink):
     assert category_drink.goods == 'Sprite, 75.0 руб. Остаток: 25\nPepi, 99.0 руб. Остаток: 49\n'
 
 
+def test_category_print(category_drink):
+    assert category_drink.__str__() == 'Drinks, количество продуктов: 2 шт.'
+
+
+def test_product_print(product_sprite):
+    assert product_sprite.__str__() == 'Sprite, 75 руб. Остаток: 25.'
+
+
 def test_product_add(product_sprite, product_sausage):
     assert product_sprite + product_sausage == 20_005

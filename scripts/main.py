@@ -22,7 +22,7 @@ if __name__ == '__main__':
     drinks = Category('Drinks', 'just drink it', [sprite, mountain_dew, pepi])
     food = Category('Food', 'Put it in your mouth and enjoy', [sausage, parmegiano])
 
-    print(sausage)
+    print(sprite)
     print(drinks)
     print(sprite + sausage)
 
