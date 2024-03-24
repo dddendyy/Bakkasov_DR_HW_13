@@ -10,6 +10,9 @@ class Product:
         self.__price = price
         self.available = available
 
+    def __str__(self):
+        return f"{self.name}, {self.price} руб. Остаток: {self.available}."
+
     @classmethod
     def create_product(cls, name, desc, price, available):
         return cls(name, desc, price, available)

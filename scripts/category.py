@@ -14,6 +14,12 @@ class Category:
         self.categories_count = Category.categories_count
         self.goods_count = Category.goods_count
 
+    def __len__(self):
+        return len(self.__goods)
+
+    def __str__(self):
+        return f"{self.name}, количество продуктов: {len(self)} шт."
+
     def add_goods(self, value):
         self.__goods.append(value)
 
