@@ -11,7 +11,9 @@ class Product:
         self.available = available
 
     def __add__(self, other):
-        return self.__price * self.available + other.__price * other.available
+        if type(other) == self.__class__:
+            return self.__price * self.available + other.__price * other.available
+        return 'Нельзя складывать продукты разных типов'
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.available}."

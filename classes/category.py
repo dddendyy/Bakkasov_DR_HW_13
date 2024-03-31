@@ -1,3 +1,5 @@
+from classes.product import Product
+
 class Category:
     name: str
     desc: str
@@ -11,8 +13,6 @@ class Category:
         self.__goods = goods
         Category.goods_count += len(goods)
         Category.categories_count += 1
-        self.categories_count = Category.categories_count
-        self.goods_count = Category.goods_count
 
     def __len__(self):
         return len(self.__goods)
@@ -21,11 +21,14 @@ class Category:
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
     def add_goods(self, value):
-        self.__goods.append(value)
+        if isinstance(value, Product):
+            self.__goods.append(value)
+        else:
+            raise TypeError("Нельзя к продукту добавлять левые объекты!")
 
     @property
     def goods(self):
-        '''декоратор для форматного вывода товаров'''
+        """декоратор для форматного вывода товаров"""
         output = ''
         for good in self.__goods:
             output += f"{good.name}, {float(good.price)} руб. Остаток: {good.available}\n"

@@ -1,9 +1,8 @@
 import pytest
 
-from scripts.product import Product
-from scripts.category import Category
-from scripts.smartphone import Smartphone
-from scripts.grass import Grass
+from classes.product import Product
+from classes.category import Category
+from classes.smartphone import Smartphone
 
 
 @pytest.fixture()
@@ -20,6 +19,11 @@ def product_sausage():
 def category_drink():
     return Category('Drinks', 'just drink it', [Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25),
                                                 Product('Pepi', 'carbonated soft drink produced by PepsiCo', 99, 49)])
+
+
+@pytest.fixture()
+def category_phones():
+    return Category('Phones', 'Pocket devices', [Smartphone('Apple', 'Device with bited apple', 160_000, 10, 2.65, 'iPhone 11', 256, 'Black')])
 
 
 @pytest.fixture()
@@ -40,6 +44,14 @@ def test_category_init(category_drink):
     assert category_drink.goods_count == 2
     assert category_drink.categories_count == 1
     assert category_drink.goods == 'Sprite, 75.0 руб. Остаток: 25\nPepi, 99.0 руб. Остаток: 49\n'
+
+
+def test_category_phones_init(category_phones):
+    assert category_phones.name == 'Phones'
+    assert category_phones.desc == 'Pocket devices'
+    assert category_phones.goods_count == 3
+    assert category_phones.categories_count == 2
+    assert category_phones.goods == 'Apple, 160000.0 руб. Остаток: 10\n'
 
 
 def test_smartphone_init(smartphone_iphone):
