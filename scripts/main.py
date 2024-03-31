@@ -25,5 +25,3 @@ if __name__ == '__main__':
     print(sprite)
     print(drinks)
     print(sprite + sausage)
-
-

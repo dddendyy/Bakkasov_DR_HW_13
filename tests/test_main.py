@@ -2,19 +2,29 @@ import pytest
 
 from scripts.product import Product
 from scripts.category import Category
+from scripts.smartphone import Smartphone
+from scripts.grass import Grass
+
 
 @pytest.fixture()
 def product_sprite():
     return Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25)
 
+
 @pytest.fixture()
 def product_sausage():
     return Product('Sausage', 'a food product', 259, 70)
+
 
 @pytest.fixture()
 def category_drink():
     return Category('Drinks', 'just drink it', [Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25),
                                                 Product('Pepi', 'carbonated soft drink produced by PepsiCo', 99, 49)])
+
+
+@pytest.fixture()
+def smartphone_iphone():
+    return Smartphone('Apple', 'Device with bited apple', 160_000, 10, 2.65, 'iPhone 11', 256, 'Black')
 
 
 def test_product_init(product_sprite):
@@ -30,6 +40,17 @@ def test_category_init(category_drink):
     assert category_drink.goods_count == 2
     assert category_drink.categories_count == 1
     assert category_drink.goods == 'Sprite, 75.0 руб. Остаток: 25\nPepi, 99.0 руб. Остаток: 49\n'
+
+
+def test_smartphone_init(smartphone_iphone):
+    assert smartphone_iphone.name == 'Apple'
+    assert smartphone_iphone.desc == 'Device with bited apple'
+    assert smartphone_iphone.price == 160_000.0
+    assert smartphone_iphone.available == 10
+    assert smartphone_iphone.perfomance == 2.65
+    assert smartphone_iphone.model == 'iPhone 11'
+    assert smartphone_iphone.memory == 256
+    assert smartphone_iphone.color == 'Black'
 
 
 def test_category_print(category_drink):
