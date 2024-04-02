@@ -1,11 +1,8 @@
 from classes.abstract_product import AbstractProduct
+from classes.print_mixin import PrintMixin
 
 
-class Product(AbstractProduct):
-    name: str
-    desc: str
-    price: float
-    available: int
+class Product(AbstractProduct, PrintMixin):
 
     def __init__(self, name: str, desc: str, price: float, available: int):
         self.name = name

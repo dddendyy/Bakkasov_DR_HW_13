@@ -69,6 +69,14 @@ def test_category_print(category_drink):
     assert category_drink.__str__() == 'Drinks, количество продуктов: 2 шт.'
 
 
+def test_product_repr(product_sprite):
+    assert product_sprite.__repr__() == "Product['Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25]"
+
+
+def test_smartphone_repr(smartphone_iphone):
+    assert smartphone_iphone.__repr__() == "Smartphone['Apple', 'Device with bited apple', 160000, 10, 2.65, 'iPhone 11', 256, 'Black']"
+
+
 def test_product_print(product_sprite):
     assert product_sprite.__str__() == 'Sprite, 75 руб. Остаток: 25.'
 
