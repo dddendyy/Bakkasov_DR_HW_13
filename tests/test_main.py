@@ -75,3 +75,5 @@ def test_product_print(product_sprite):
 
 def test_product_add(product_sprite, product_sausage):
     assert product_sprite + product_sausage == 20_005
+    with pytest.raises(TypeError):
+        assert product_sprite + smartphone_iphone

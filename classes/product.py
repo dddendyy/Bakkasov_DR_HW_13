@@ -13,7 +13,7 @@ class Product:
     def __add__(self, other):
         if type(other) == self.__class__:
             return self.__price * self.available + other.__price * other.available
-        return 'Нельзя складывать продукты разных типов'
+        raise TypeError('Нельзя складывать продукты разных типов')
 
     def __str__(self):
         return f"{self.name}, {self.price} руб. Остаток: {self.available}."
