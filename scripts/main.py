@@ -18,5 +18,3 @@ if __name__ == '__main__':
     drinks = Category('Drinks', 'just drink it', [sprite, mountain_dew, pepi])
     food = Category('Food', 'Put it in your mouth and enjoy', [sausage, parmegiano])
     phones = Category('Phones', 'Pocket devices', [iphone_11, redmi_note_11])
-
-    zero = Product('Zero', 'test exceptions', 100, 0)
