@@ -91,13 +91,13 @@ def test_product_print(product_sprite):
     assert product_sprite.__str__() == 'Sprite, 75 руб. Остаток: 25.'
 
 
-def test_product_add(product_sprite, product_sausage):
+def test_product_add(product_sprite, product_sausage, smartphone_iphone):
     assert product_sprite + product_sausage == 20_005
     with pytest.raises(TypeError):
         assert product_sprite + smartphone_iphone
 
 
-def test_product_value_error(zero_product, product_sausage):
+def test_product_value_error(product_sausage, zero_product):
     with pytest.raises(ValueError, match='Нельзя складывать товары с нулевым количеством!'):
         assert zero_product + product_sausage
     with pytest.raises(ValueError, match='Нельзя складывать товары с нулевым количеством!'):
