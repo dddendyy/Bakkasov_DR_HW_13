@@ -6,6 +6,11 @@ from classes.smartphone import Smartphone
 
 
 @pytest.fixture()
+def zero_product():
+    return Product('Zero', 'test exceptions', 100, 0)
+
+
+@pytest.fixture()
 def product_sprite():
     return Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25)
 
@@ -85,3 +90,11 @@ def test_product_add(product_sprite, product_sausage):
     assert product_sprite + product_sausage == 20_005
     with pytest.raises(TypeError):
         assert product_sprite + smartphone_iphone
+
+
+def test_product_value_error(zero_product, product_sausage):
+    with pytest.raises(ValueError, match='Нельзя складывать товары с нулевым количеством!'):
+        assert zero_product + product_sausage
+    with pytest.raises(ValueError, match='Нельзя складывать товары с нулевым количеством!'):
+        assert product_sausage + zero_product
+

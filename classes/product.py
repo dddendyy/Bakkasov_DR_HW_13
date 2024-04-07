@@ -16,8 +16,11 @@ class Product(AbstractProduct, PrintMixin):
         Метод для сложения
         Если тип второго слагаемого равен классу Product, то пропускаем
         """
+        if self.available == 0 or other.available == 0:
+            raise ValueError('Нельзя складывать товары с нулевым количеством!')
         if type(other) == self.__class__:
             return self.__price * self.available + other.__price * other.available
+
         raise TypeError('Нельзя складывать продукты разных типов')
 
     def __str__(self):
