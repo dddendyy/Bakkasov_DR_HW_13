@@ -34,3 +34,16 @@ class Category:
             output += f"{good.name}, {float(good.price)} руб. Остаток: {good.available}\n"
 
         return output
+
+    def average(self):
+        """
+        Функия для поиски среднего ценника всех продуктов
+        """
+        goods_sum = 0
+        try:
+            for good in self.__goods:
+                goods_sum += good.price
+            result = goods_sum / len(self.__goods)
+            return result
+        except ZeroDivisionError:
+            return 0

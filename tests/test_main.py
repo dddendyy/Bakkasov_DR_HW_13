@@ -5,9 +5,14 @@ from classes.category import Category
 from classes.smartphone import Smartphone
 
 
-@pytest.fixture()
+@pytest.fixture
 def zero_product():
     return Product('Zero', 'test exceptions', 100, 0)
+
+
+@pytest.fixture()
+def zero_category():
+    return Category('Zero', 'For test', [])
 
 
 @pytest.fixture()
@@ -98,3 +103,7 @@ def test_product_value_error(zero_product, product_sausage):
     with pytest.raises(ValueError, match='Нельзя складывать товары с нулевым количеством!'):
         assert product_sausage + zero_product
 
+
+def test_category_average_error(category_drink, zero_category):
+    assert category_drink.average() == 87.0
+    assert zero_category.average() == 0

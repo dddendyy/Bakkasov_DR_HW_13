@@ -5,7 +5,7 @@ from classes.smartphone import Smartphone
 if __name__ == '__main__':
     sprite = Product('Sprite', 'carbonated soft drink with lime and lemon flavor', 75, 25)
     pepi = Product('Pepi', 'carbonated soft drink produced by PepsiCo', 99, 49)
-    mountain_dew = Product('Mountain Dew','green drink',129, 10)
+    mountain_dew = Product('Mountain Dew','green drink',3, 10)
 
     sausage = Product('Sausage','a food product',259, 70)
     shrimps = Product.create_product('Shrimps', 'So tasty', 369, 29)
