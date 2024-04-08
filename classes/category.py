@@ -21,6 +21,8 @@ class Category:
         return f"{self.name}, количество продуктов: {len(self)} шт."
 
     def add_goods(self, value):
+        if value.available == 0:
+            raise ValueError('Количество добавляемого товара не может быть нулевым!')
         if isinstance(value, Product):
             self.__goods.append(value)
         else:

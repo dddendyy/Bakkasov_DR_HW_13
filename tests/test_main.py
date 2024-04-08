@@ -107,3 +107,8 @@ def test_product_value_error(product_sausage, zero_product):
 def test_category_average_error(category_drink, zero_category):
     assert category_drink.average() == 87.0
     assert zero_category.average() == 0
+
+
+def test_category_value_error(category_drink, zero_product):
+    with pytest.raises(ValueError, match='Количество добавляемого товара не может быть нулевым!'):
+        assert category_drink.add_goods(zero_product)
